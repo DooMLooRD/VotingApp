@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
         body: Container(
           padding: EdgeInsets.all(20),
           child: Text(
-            'Welcome to voting application!\nTo vote open the side bar and chose Vote.',
+            'Welcome to voting application!\nTo vote open the side bar and choose Vote.',
             style: TextStyle(fontSize: 20),
           ),
         ),

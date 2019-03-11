@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
 
 class VotesPage extends StatelessWidget {
-  final List<String> candidates1 = [];
+  final List<Row> candidates1 = [];
   final List<String> candidates2 = [];
   Widget test1;
   Widget test2;
 
   VotesPage() {
     for (var i = 0; i < 50; i++) {
-      candidates1.add('prezydent' + i.toString());
+      candidates1.add(Row( children: [Radio(value: i), Text('prezydent' + i.toString())]));
       if (i < 30) candidates2.add('candidate' + i.toString());
     }
-    test1 = ListView.separated(
-      separatorBuilder: (context, index) => Divider(
-            color: Colors.white,
-          ),
-      itemBuilder: _buildProductItem1,
-      itemCount: candidates1.length,
-    );
+    test1 = Column(children: <Widget>[
+      RaisedButton(
+        child: Text('Confirm'),
+        onPressed: () => {},
+      ),
+      Expanded(
+          child: ListView.separated(
+        separatorBuilder: (context, index) => Divider(
+              color: Colors.white,
+            ),
+        itemBuilder: _buildProductItem1,
+        itemCount: candidates1.length,
+      ))
+    ]);
+
     test2 = ListView.separated(
       separatorBuilder: (context, index) => Divider(
             color: Colors.white,
@@ -28,7 +36,7 @@ class VotesPage extends StatelessWidget {
   }
   Widget _buildProductItem1(BuildContext context, int index) {
     return Column(
-      children: <Widget>[Text(candidates1[index])],
+      children: <Widget>[candidates1[index]],
     );
   }
 
