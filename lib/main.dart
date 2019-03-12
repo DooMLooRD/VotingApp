@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/verification.dart';
+import 'pages/start.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -10,9 +10,9 @@ class MainWindow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(brightness: Brightness.dark,),
       title: 'Voting App',
-      home: VerificationPage(),
+      home: StartPage(),
     );
   }
 }

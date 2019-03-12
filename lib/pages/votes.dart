@@ -8,23 +8,27 @@ class VotesPage extends StatelessWidget {
 
   VotesPage() {
     for (var i = 0; i < 50; i++) {
-      candidates1.add(Row( children: [Radio(value: i), Text('prezydent' + i.toString())]));
+      candidates1.add(
+          Row(children: [Radio(value: i), Text('prezydent' + i.toString())]));
       if (i < 30) candidates2.add('candidate' + i.toString());
     }
-    test1 = Column(children: <Widget>[
-      RaisedButton(
-        child: Text('Confirm'),
-        onPressed: () => {},
-      ),
-      Expanded(
+    test1 = Column(
+      children: <Widget>[
+        RaisedButton(
+          child: Text('Confirm'),
+          onPressed: () => {},
+        ),
+        Expanded(
           child: ListView.separated(
-        separatorBuilder: (context, index) => Divider(
-              color: Colors.white,
-            ),
-        itemBuilder: _buildProductItem1,
-        itemCount: candidates1.length,
-      ))
-    ]);
+            separatorBuilder: (context, index) => Divider(
+                  color: Colors.white,
+                ),
+            itemBuilder: _buildProductItem1,
+            itemCount: candidates1.length,
+          ),
+        )
+      ],
+    );
 
     test2 = ListView.separated(
       separatorBuilder: (context, index) => Divider(
@@ -51,22 +55,23 @@ class VotesPage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-          appBar: AppBar(
-            title: Text('Candidates'),
-            bottom: TabBar(
-              tabs: <Widget>[
-                Tab(
-                  text: 'Prezydent',
-                ),
-                Tab(
-                  text: 'Przewodniczacy kola rozancowego',
-                ),
-              ],
-            ),
+        appBar: AppBar(
+          title: Text('Candidates'),
+          bottom: TabBar(
+            tabs: <Widget>[
+              Tab(
+                text: 'Prezydent',
+              ),
+              Tab(
+                text: 'Przewodniczacy kola rozancowego',
+              ),
+            ],
           ),
-          body: TabBarView(
-            children: <Widget>[test1, test2],
-          )),
+        ),
+        body: TabBarView(
+          children: <Widget>[test1, test2],
+        ),
+      ),
     );
   }
 }

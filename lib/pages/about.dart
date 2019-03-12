@@ -40,13 +40,6 @@ class AboutPage extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
             ),
-            Container(
-              padding: EdgeInsets.all(5.0),
-              child: Text(
-                'Marcin Kwapisz',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
           ],
         ),
       ),
