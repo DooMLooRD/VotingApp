@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
+  Widget _buildTextContainer(String content, double fontSize) {
+    return Container(
+              padding: EdgeInsets.all(5.0),
+              child: Text(
+                content,
+                style: TextStyle(fontSize: fontSize),
+              ),
+            );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,34 +22,10 @@ class AboutPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                'Voting app',
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                'Made by:',
-                style: TextStyle(fontSize: 40),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(5.0),
-              child: Text(
-                'Damian Salata',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(5.0),
-              child: Text(
-                'Michal Chudzik',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
+            _buildTextContainer('Voting App', 50),
+            _buildTextContainer('Made by', 40),
+            _buildTextContainer('Damian Salata', 20),
+            _buildTextContainer('Michał Chudzik', 20),
           ],
         ),
       ),

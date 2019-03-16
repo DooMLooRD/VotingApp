@@ -9,7 +9,13 @@ class VotesPage extends StatelessWidget {
   VotesPage() {
     for (var i = 0; i < 50; i++) {
       candidates1.add(
-          Row(children: [Radio(value: i), Text('prezydent' + i.toString())]));
+          Row(
+            children: [
+              Radio(value: i),
+              Text('prezydent' + i.toString())
+            ],
+          )
+      );
       if (i < 30) candidates2.add('candidate' + i.toString());
     }
     test1 = Column(
