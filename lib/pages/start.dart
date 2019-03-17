@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/fancy_button.dart';
-import 'home.dart';
 
 class StartPage extends StatelessWidget {
   @override
@@ -18,14 +17,7 @@ class StartPage extends StatelessWidget {
             children: <Widget>[
               MenuButton(
                   content: "Generate",
-                  action: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => HomePage(),
-                      ),
-                    );
-                  })
+                  action: () { Navigator.pushNamed(context, '/code'); })
             ],
           ),
         ),

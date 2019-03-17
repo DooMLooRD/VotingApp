@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/fancy_button.dart';
-import 'votes.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -34,12 +33,7 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
               child: MenuButton(
                 content: "Vote",
-                action: () {Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => VotesPage(),
-                      ),
-                    );},
+                action: () { Navigator.pushNamed(context, '/vote'); },
               ),
             )
           ],
