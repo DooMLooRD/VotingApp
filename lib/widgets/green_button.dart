@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MenuButton extends StatelessWidget {
+class GreenButton extends StatelessWidget {
   final String content;
   final Function action;
 
-  MenuButton({this.content, this.action});
+  GreenButton({this.content, this.action});
 
   @override
   Widget build(BuildContext context) {

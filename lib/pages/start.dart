@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/fancy_button.dart';
+import '../widgets/green_button.dart';
 
 class StartPage extends StatelessWidget {
   @override
@@ -15,7 +15,7 @@ class StartPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              MenuButton(
+              GreenButton(
                   content: "Generate",
                   action: () { Navigator.pushNamed(context, '/code'); })
             ],

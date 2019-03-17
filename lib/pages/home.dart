@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/fancy_button.dart';
+import '../widgets/green_button.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
-              child: MenuButton(
+              child: GreenButton(
                 content: "Vote",
                 action: () { Navigator.pushNamed(context, '/vote'); },
               ),
