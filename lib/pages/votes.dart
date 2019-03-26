@@ -1,17 +1,36 @@
 import 'package:flutter/material.dart';
+import '../widgets/green_button.dart';
 
-class VotesPage extends StatelessWidget {
+class VotesPage extends StatefulWidget {
+  @override
+  VotePageState createState() => new VotePageState();
+}
+
+class VotePageState extends State<VotesPage>{
+  @override
   final List<Row> candidates1 = [];
   final List<String> candidates2 = [];
   Widget test1;
   Widget test2;
+  int _radioValue = -1;
 
-  VotesPage() {
+  void _handleRadioValueChange(int value) {
+    setState(() {
+      _radioValue = value;
+    });
+  }
+
+
+  VotePageState() {
     for (var i = 0; i < 50; i++) {
       candidates1.add(
           Row(
-            children: [
-              Radio(value: i),
+            children: <Widget>[
+              Radio(
+                value: i,
+                onChanged: _handleRadioValueChange,
+                groupValue: _radioValue
+              ),
               Text('prezydent' + i.toString())
             ],
           )
@@ -20,10 +39,6 @@ class VotesPage extends StatelessWidget {
     }
     test1 = Column(
       children: <Widget>[
-        RaisedButton(
-          child: Text('Confirm'),
-          onPressed: () => {},
-        ),
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) => Divider(
@@ -32,7 +47,8 @@ class VotesPage extends StatelessWidget {
             itemBuilder: _buildProductItem1,
             itemCount: candidates1.length,
           ),
-        )
+        ),
+        GreenButton(action: () => {}, content: 'Confirm')
       ],
     );
 
@@ -80,4 +96,6 @@ class VotesPage extends StatelessWidget {
       ),
     );
   }
+
 }
+
