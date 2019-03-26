@@ -18,7 +18,7 @@ class MainWindow extends StatelessWidget {
         '/code': (context) => HomePage(),
         '/vote': (context) => VotesPage()
       },
-      theme: ThemeData(brightness: Brightness.dark,),
+      theme: ThemeData(brightness: Brightness.light,),
       title: 'Voting App',
     );
   }

@@ -24,8 +24,8 @@ class HomePage extends StatelessWidget {
             Container(
               alignment: Alignment.center,
               padding: EdgeInsets.all(20),
-              child: Text(
-                '3456789',
+              child: TextFormField(
+                
                 style: TextStyle(fontSize: 50),
               ),
             ),
