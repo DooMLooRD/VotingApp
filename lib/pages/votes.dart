@@ -10,6 +10,7 @@ class VotesPage extends StatefulWidget {
 class VotePageState extends State<VotesPage> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         title: Text("Voting"),
