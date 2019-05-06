@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'pages/start.dart';
 import 'pages/home.dart';
 import 'pages/votes.dart';
 
@@ -14,9 +13,15 @@ class MainWindow extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => StartPage(),
-        '/code': (context) => HomePage(),
-        '/vote': (context) => VotesPage()
+        '/': (context) => HomePage(),
+      },
+        onGenerateRoute: (settings) {
+        final arguments = settings.arguments;
+        switch (settings.name) {
+          case '/vote':
+            return MaterialPageRoute(builder: (context) => VotesPage(arguments) );
+            break;
+        }
       },
       theme: ThemeData(brightness: Brightness.light,),
       title: 'Voting App',

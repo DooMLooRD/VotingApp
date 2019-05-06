@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/green_button.dart';
 
 class HomePage extends StatelessWidget {
+  String _token;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,8 +25,8 @@ class HomePage extends StatelessWidget {
             Container(
               alignment: Alignment.center,
               padding: EdgeInsets.all(20),
-              child: TextFormField(
-                
+              child: TextField(
+                onChanged: (val) => _token = val ,
                 style: TextStyle(fontSize: 50),
               ),
             ),
@@ -33,7 +34,7 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
               child: GreenButton(
                 content: "Vote",
-                action: () { Navigator.pushNamed(context, '/vote'); },
+                action: () { Navigator.pushNamed(context, '/vote', arguments: _token); },
               ),
             )
           ],
