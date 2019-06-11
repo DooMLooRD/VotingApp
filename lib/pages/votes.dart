@@ -62,13 +62,14 @@ class VotePageState extends State<VotesPage> {
   }
 
   Future _vote() async {
-    print(widget._tokenId);
-    print(_radioValue);
     var body =
         json.encode({"tokenId": widget._tokenId, "candidateId": _radioValue});
-    var response = await http.post(_postVoteUrl,
-        headers: {"Content-Type": "application/json"}, body: body);
-    print(response.body);
+    await http
+        .post(_postVoteUrl,
+            headers: {"Content-Type": "application/json"}, body: body)
+        .then((response) => Navigator.pushNamed(context, '/'))
+        .timeout(Duration(seconds: 5),
+            onTimeout: () => Navigator.pushNamed(context, '/'));
   }
 
   Widget _buildCandidates(BuildContext context, int index) {

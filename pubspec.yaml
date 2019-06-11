@@ -15,8 +15,8 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
-
 dependencies:
+  dcdg: ^2.0.1
   observable: ^0.22.2
   http: ^0.12.0+2
   flutter:
